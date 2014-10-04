@@ -1,0 +1,20 @@
+<h1>Poll</h1>
+<h2 class="subtle">Voting done simply in real-time</h2>
+
+<div ng-controller="QuestionController">
+  <%= form_for(@question) do |f| %>
+    <div class="field">
+      <%= f.text_field :title, class: "large", autocomplete: "off", placeholder: "Add your question here" %>
+    </div>
+
+    <h3>Add your options below:</h3>
+
+    <div class="field" ng-repeat="option in options track by $index">
+      <%= text_field_tag "options[][title]", @option.title, autocomplete: "off", placeholder: "Option {{$index+1}}", ng_model: "options[$index]", ng_blur: "optionBlur($index, option)" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Start" %>
+    </div>
+  <% end %>
+</div>

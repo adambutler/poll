@@ -1,0 +1,22 @@
+<div ng-controller="QuestionController" ng-init="setOption('<%= @vote.option_id %>')">
+
+  <h1><%= @question.title %></h1>
+
+  <%= form_tag "/votes", method: :put do |f| %>
+    <%= hidden_field(:vote, :question_id, value: @question.secret) %>
+
+    <fieldset>
+      <% @question.options.each do |option| %>
+        <div class="field">
+          <%= label_tag "vote_option_id_#{option.id}", class: "radio" do %>
+            <%= radio_button("vote", "option_id", option.id, class: "visually-hidden", ng_model: "option") %><!--
+            --><span class="outer"><span class="inner"></span></span><%= option.title %><!--
+          --><% end %>
+        </div>
+      <% end %>
+    </fieldset>
+  <% end %>
+
+  <p><a href="/<%= @question.secret %>/results">Go to results</a></p>
+
+</div>

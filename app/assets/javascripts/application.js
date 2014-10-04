@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require angular
+//= require Chart.js
+//= require tinycolor
+//= require angles
+//= require nanobar
+
+//= require_tree ./angular/modules
+//= require_tree ./angular/factories
+//= require_tree ./angular/controllers
+
 //= require_tree .

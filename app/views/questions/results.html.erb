@@ -1,0 +1,21 @@
+<div ng-controller="ResultController" ng-init="setQuestion('<%= @question.secret %>')">
+  <div class="col--left">
+    <h1><%= @question.title %></h1>
+    <div>
+      <canvas id="chart" width="300" height="300"></canvas>
+    </div>
+  </div>
+
+  <div class="col--right">
+    <h2>Votes</h2>
+    <div ng-repeat="datum in chartData | orderBy:'value':true ">
+      <div class="swatch">
+        <div class="swatch__circle" ng-style="{'color': datum.color, 'border-color': datum.color}">
+          {{ datum.value }}
+        </div>
+        <span class="swatch__label" ng-style="{color: datum.color}">{{ datum.label }}</span>
+      </div>
+    </div>
+  </div>
+
+</div>
