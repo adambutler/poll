@@ -32,7 +32,37 @@ $black: #333; // <- its all lies! Muhaahaha!
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
+
+h1 {
+  display: inline-block;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -55px;
+}
+
+.footer, .push {
+  padding: 0 20px;
+  margin: 0;
+  height: 50px;
+}
+
+.footer {
+  background: rgba($white, 0.8);
+  border-top: 1px solid $gray;
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
 
 body, input[type=submit] {
   font-family: "Oswald", sans-serif;
@@ -66,7 +96,7 @@ canvas {
 .col--right {
   box-sizing: border-box;
   position: absolute;
-  top: 0; right: 0; bottom: 0;
+  top: 0; right: 0; bottom: 55px;
   width: 350px;
   padding: 30px 20px;
   background: $gray-light;
@@ -120,6 +150,7 @@ a {
 }
 
 input[type=text] {
+  box-sizing: border-box;
   width: 100%;
   max-width: 320px;
   border-radius: 7px;
@@ -133,8 +164,10 @@ input[type=text] {
 
   &.large {
     padding: 10px 20px;
-    max-width: 620px;
-    margin-bottom: 20px;
+    width: 620px;
+    max-width: 80%;
+    margin: 20px;
+    margin-top: 0;
     line-height: 42px;
     font-size: 20px;
   }

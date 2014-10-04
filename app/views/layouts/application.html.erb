@@ -10,8 +10,13 @@
   <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
 </head>
 <body data-no-turbolink>
-
-<%= yield %>
+  <div class="wrapper">
+    <%= yield %>
+    <div class="push"></div>
+  </div>
+  <div class="footer">
+    <p>Poll is a soon to be open-sourced project by <a href="http://github.com/adambutler">Adam Butler</a>
+  </div>
 
 </body>
 </html>
