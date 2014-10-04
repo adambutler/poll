@@ -11,7 +11,7 @@ angular
 
       $scope.updateChart = ->
         $.ajax
-          url: "/8uRC7FnV-7zOVyvxkgSO7Q/results.json"
+          url: "/#{$scope.question}/results.json"
           success: (data) ->
             $scope.$apply ->
               if $scope.chartData.length != data.length
@@ -27,9 +27,10 @@ angular
               else
                 $scope.chart = new Chart($scope.ctx).Doughnut($scope.chartData, $scope.chartOptions)
 
-      $scope.updateChart()
 
       $scope.setQuestion = (question) ->
+        $scope.question = question
+        $scope.updateChart()
         pusher = new Pusher("ca686b2d59bada416303")
         channel = pusher.subscribe(question)
         channel.bind "vote", ->

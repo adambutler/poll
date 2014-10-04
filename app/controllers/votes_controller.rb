@@ -20,8 +20,6 @@ class VotesController < ApplicationController
         format.html { redirect_to "/#{question.secret}", notice: 'Vote was successfully created.' }
         format.json { render json: {}, status: :created }
       end
-
-
     end
   end
 

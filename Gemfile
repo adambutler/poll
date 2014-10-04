@@ -3,8 +3,6 @@ source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use mysql as the database for Active Record
-gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,11 +36,16 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails-assets-angular', "1.3.0.rc.4"
+gem 'pusher'
+
+group :production, :staging do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'mysql2'
 end
-
-gem 'rails-assets-angular', "1.3.0.rc.4"
-
-gem 'pusher'

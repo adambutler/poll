@@ -47,6 +47,11 @@ h2, h3, h4, input[type=submit] {
   font-weight: 100;
 }
 
+canvas {
+  max-width: 700px;
+  max-height: 700px;
+}
+
 .subtle {
   color: $gray-darker;
 }
@@ -54,7 +59,7 @@ h2, h3, h4, input[type=submit] {
 .col--left {
   box-sizing: border-box;
   position: absolute;
-  top: 0; right: 250px; bottom: 0; left: 0;
+  top: 0; right: 350px; bottom: 0; left: 0;
   padding: 20px 40px;
 }
 
@@ -62,7 +67,7 @@ h2, h3, h4, input[type=submit] {
   box-sizing: border-box;
   position: absolute;
   top: 0; right: 0; bottom: 0;
-  width: 250px;
+  width: 350px;
   padding: 30px 20px;
   background: $gray-light;
 }
