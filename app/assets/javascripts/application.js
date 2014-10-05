@@ -20,7 +20,6 @@
 //= require nanobar
 
 //= require_tree ./angular/modules
-//= require_tree ./angular/factories
 //= require_tree ./angular/controllers
 
 //= require_tree .
