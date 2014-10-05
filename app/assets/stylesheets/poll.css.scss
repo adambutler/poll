@@ -39,6 +39,10 @@ h1 {
   display: inline-block;
 }
 
+small {
+  font-weight: 100;
+}
+
 .wrapper {
   min-height: 100%;
   height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
