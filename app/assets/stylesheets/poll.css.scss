@@ -182,6 +182,7 @@ input[type=text] {
 }
 
 input[type=submit] {
+  -webkit-appearance: none;
   cursor: pointer;
   outline: none;
   width: 120px;
