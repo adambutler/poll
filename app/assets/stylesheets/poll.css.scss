@@ -66,6 +66,7 @@ small {
   top: 0; bottom: 55px; left: 0; right: 0;
   display: flex;
   flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
   //background: red;
 }
 
@@ -76,6 +77,7 @@ small {
 .col-left {
   //background: green;
   flex: 4;
+  -webkit-flex: 4;
   min-width: 450px;
   min-height: 450px;
 }
@@ -85,6 +87,7 @@ small {
   overflow: auto;
   background: $gray-light;
   flex: 1;
+  -webkit-flex: 1;
   min-width: 350px;
   padding: 0 20px;
 }
@@ -93,6 +96,7 @@ small {
   .col-left {
     //background: green;
     flex: 4;
+    -webkit-flex: 4;
     min-width: none;
     min-height: 450px;
   }
@@ -105,6 +109,7 @@ small {
   top: 20px; right: 20px; bottom: 20px; left: 20px;
   display: flex;
   flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
 }
 
 .chart__header {
@@ -115,6 +120,7 @@ small {
   position: relative;
   //background: magenta;
   flex: 1;
+  -webkit-flex: 1;
 }
 
 .chart__main__container {
