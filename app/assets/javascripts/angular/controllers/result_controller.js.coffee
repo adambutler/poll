@@ -2,7 +2,7 @@ angular
   .module("Poll")
   .controller "ResultController", ["$scope", "$interval", ($scope, $interval) ->
 
-      $scope.ctx = $('#chart')[0].getContext("2d")
+      $scope.ctx = $('canvas')[0].getContext("2d")
 
       $scope.chartData = []
       $scope.chartOptions = {

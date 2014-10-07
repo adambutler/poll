@@ -61,12 +61,80 @@ small {
   border-top: 1px solid $gray;
 }
 
-/*
+.row {
+  position: absolute;
+  top: 0; bottom: 55px; left: 0; right: 0;
+  display: flex;
+  flex-flow: row wrap;
+  //background: red;
+}
 
-Sticky Footer by Ryan Fait
-http://ryanfait.com/
+.col {
+  position: relative;
+}
 
-*/
+.col-left {
+  //background: green;
+  flex: 4;
+  min-width: 450px;
+  min-height: 450px;
+}
+
+.col-right {
+  //background: blue;
+  overflow: auto;
+  background: $gray-light;
+  flex: 1;
+  min-width: 350px;
+  padding: 0 20px;
+}
+
+@media all and (max-width: 767px) {
+  .col-left {
+    //background: green;
+    flex: 4;
+    min-width: none;
+    min-height: 450px;
+  }
+
+}
+
+.chart {
+  //background: orange;
+  position: absolute;
+  top: 20px; right: 20px; bottom: 20px; left: 20px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.chart__header {
+  //background: cyan;
+}
+
+.chart__main {
+  position: relative;
+  //background: magenta;
+  flex: 1;
+}
+
+.chart__main__container {
+  position: absolute;
+  top: 20px; bottom: 0; left: 0; right: 0;
+}
+
+canvas {
+  display: block;
+  max-height: 100%;
+  width: auto !important;
+  margin: 0 auto;
+}
+
+
+body {
+  margin: 0;
+}
+
+
 
 body, input[type=submit] {
   font-family: "Oswald", sans-serif;
@@ -81,44 +149,8 @@ h2, h3, h4, input[type=submit] {
   font-weight: 100;
 }
 
-canvas {
-  max-width: 700px;
-  max-height: 700px;
-}
-
 .subtle {
   color: $gray-darker;
-}
-
-.col--left {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0; right: 350px; bottom: 0; left: 0;
-  padding: 20px 40px;
-}
-
-.col--right {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0; right: 0; bottom: 55px;
-  width: 350px;
-  padding: 30px 20px;
-  background: $gray-light;
-}
-
-@media all and (max-width: 767px) {
-  .col--left, .col--right {
-    position: static;
-    width: auto;
-  }
-
-  .col--right {
-    padding-top: 1px;
-  }
-
-  .footer {
-    font-size: 0.8em;
-  }
 }
 
 .swatch {
