@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_filter :set_question, only: [:show, :results]
+  after_action :allow_iframe, only: [:show, :results]
 
   def new
     @question = Question.new
@@ -41,5 +42,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:title)
+  end
+
+  def allow_iframe
+    response.headers.except! 'X-Frame-Options'
   end
 end
