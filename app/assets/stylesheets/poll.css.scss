@@ -235,6 +235,7 @@ input[type=text] {
 }
 
 input[type=submit] {
+  transition: all 200ms ease-in-out;
   -webkit-appearance: none;
   cursor: pointer;
   outline: none;
@@ -248,4 +249,7 @@ input[type=submit] {
   padding: 10px 15px;
   border-radius: 100%;
   text-align: center;
+  &[disabled] {
+    background: mix($gray, $gray-light);
+  }
 }

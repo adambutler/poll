@@ -4,7 +4,7 @@
 <div ng-controller="QuestionController">
   <%= form_for(@question) do |f| %>
     <div class="field">
-      <%= f.text_field :title, class: "large", autocomplete: "off", placeholder: "Add your question here" %>
+      <%= f.text_field :title, class: "large", autocomplete: "off", placeholder: "Add your question here", ng_model: "question" %>
     </div>
 
     <h3>Add your options below:</h3>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Start" %>
+      <%= f.submit "Start", disabled: "disabled", ng_disabled: "formDisabled()" %>
     </div>
 
     <br><small class="subtle">or</small><br>
