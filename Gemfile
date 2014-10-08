@@ -36,6 +36,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "autoprefixer-rails"
 gem 'rails-assets-angular', "1.3.0.rc.4"
 gem 'pusher'
 

@@ -45,8 +45,6 @@ small {
 
 .wrapper {
   min-height: 100%;
-  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
-  height: 100%;
   margin: 0 auto -55px;
 }
 
@@ -78,7 +76,7 @@ small {
   //background: green;
   flex: 4;
   -webkit-flex: 4;
-  min-width: 450px;
+  min-width: 0px;
   min-height: 450px;
 }
 
@@ -93,12 +91,26 @@ small {
 }
 
 @media all and (max-width: 767px) {
+  .footer {
+    display: none;
+  }
+
+  .row {
+    display: block;
+  }
+
   .col-left {
-    //background: green;
-    flex: 4;
-    -webkit-flex: 4;
     min-width: none;
     min-height: 450px;
+  }
+
+  .chart__main {
+
+    min-height: 250px;
+  }
+
+  .col-right {
+    min-width: 0px;
   }
 
 }
