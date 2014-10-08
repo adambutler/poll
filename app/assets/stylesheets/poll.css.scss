@@ -179,6 +179,7 @@ h2, h3, h4, input[type=submit] {
 }
 
 .swatch__circle {
+  position: absolute;
   box-sizing: border-box;
   text-align: center;
   line-height: 40px;
@@ -196,6 +197,11 @@ h2, h3, h4, input[type=submit] {
   line-height: 56px;
   vertical-align: top;
   font-weight: 100;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 20%;
+  width: 80%;
 }
 
 .visually-hidden {
