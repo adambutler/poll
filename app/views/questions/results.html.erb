@@ -11,6 +11,10 @@
             <canvas width="100px" height="100px"></canvas>
           </div>
         </article>
+
+        <footer class="chart__footer">
+          <p><a href="/<%= @question.secret %>">Go to options</a></p>
+        </footer>
       </div>
     </div>
     <div class="col col-right">
@@ -20,7 +24,9 @@
           <div class="swatch__circle" ng-style="{'color': datum.color, 'border-color': datum.color}">
             {{ datum.value }}
           </div>
-          <span class="swatch__label" ng-style="{color: datum.color}">{{ datum.label }}</span>
+          <span class="swatch__label" ng-style="{color: datum.color}">
+            <span class="swatch__label__text">{{ datum.label }}</span>
+          </span>
         </div>
       </div>
     </div>

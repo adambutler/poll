@@ -64,7 +64,6 @@ small {
   top: 0; bottom: 55px; left: 0; right: 0;
   display: flex;
   flex-flow: row wrap;
-  -webkit-flex-flow: row wrap;
   //background: red;
 }
 
@@ -75,7 +74,6 @@ small {
 .col-left {
   //background: green;
   flex: 4;
-  -webkit-flex: 4;
   min-width: 0px;
   min-height: 450px;
 }
@@ -85,43 +83,18 @@ small {
   overflow: auto;
   background: $gray-light;
   flex: 1;
-  -webkit-flex: 1;
   min-width: 350px;
   padding: 0 20px;
 }
 
-@media all and (max-width: 767px) {
-  .footer {
-    display: none;
-  }
 
-  .row {
-    display: block;
-  }
-
-  .col-left {
-    min-width: none;
-    min-height: 450px;
-  }
-
-  .chart__main {
-
-    min-height: 250px;
-  }
-
-  .col-right {
-    min-width: 0px;
-  }
-
-}
 
 .chart {
   //background: orange;
   position: absolute;
   top: 20px; right: 20px; bottom: 20px; left: 20px;
   display: flex;
-  flex-flow: column wrap;
-  -webkit-flex-flow: column wrap;
+  flex-flow: column;
 }
 
 .chart__header {
@@ -131,8 +104,7 @@ small {
 .chart__main {
   position: relative;
   //background: magenta;
-  flex: 1;
-  -webkit-flex: 1;
+  flex: auto;
 }
 
 .chart__main__container {
@@ -172,13 +144,15 @@ h2, h3, h4, input[type=submit] {
 }
 
 .swatch {
-  height: 56px;
-  line-height: 56px;
   margin-bottom: 10px;
   text-align: left;
+
+  display: flex;
+  align-items: center;
 }
 
 .swatch__circle {
+  line-height: 56px;
   position: absolute;
   box-sizing: border-box;
   text-align: center;
@@ -193,15 +167,16 @@ h2, h3, h4, input[type=submit] {
 }
 
 .swatch__label {
-  display: inline-block;
-  line-height: 56px;
-  vertical-align: top;
+  display: block;
   font-weight: 100;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-left: 20%;
-  width: 80%;
+  margin-left: 66px;
+  line-height: 1.2em;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.swatch__label__text {
 }
 
 .visually-hidden {
@@ -254,7 +229,6 @@ input[type=text] {
 
 input[type=submit] {
   transition: all 200ms ease-in-out;
-  -webkit-appearance: none;
   cursor: pointer;
   outline: none;
   width: 120px;
@@ -269,5 +243,32 @@ input[type=submit] {
   text-align: center;
   &[disabled] {
     background: mix($gray, $gray-light);
+  }
+}
+
+@media all and (max-width: 767px) {
+  .footer {
+    display: none;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .col-left {
+    min-width: none;
+    min-height: 450px;
+  }
+
+  .chart {
+    position: static;
+  }
+
+  .chart__main {
+    min-height: 250px;
+  }
+
+  .col-right {
+    min-width: 0px;
   }
 }
