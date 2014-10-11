@@ -1,6 +1,6 @@
 angular
   .module("Poll")
-  .controller "ResultController", ["$scope", "$interval", ($scope, $interval) ->
+  .controller "ResultController", ["$scope", "$interval", "Pusher", ($scope, $interval, Pusher) ->
 
       $scope.ctx = $('canvas')[0].getContext("2d")
 
@@ -31,8 +31,7 @@ angular
       $scope.setQuestion = (question) ->
         $scope.question = question
         $scope.updateChart()
-        pusher = new Pusher("ca686b2d59bada416303")
-        channel = pusher.subscribe(question)
+        channel = Pusher.subscribe(question)
         channel.bind "vote", ->
           $scope.updateChart()
 

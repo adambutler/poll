@@ -1,0 +1,6 @@
+angular
+  .module("Poll")
+  .factory "Pusher", ->
+    return new Pusher("<%= CONFIG[:pusher]["key"] %>")
+
+
