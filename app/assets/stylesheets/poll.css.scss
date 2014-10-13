@@ -112,6 +112,11 @@ small {
   top: 20px; bottom: 0; left: 0; right: 0;
 }
 
+.chart__main__container__container {
+  position: relative;
+  height: 100%;
+}
+
 canvas {
   display: block;
   max-height: 100%;
