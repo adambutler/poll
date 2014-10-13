@@ -50,3 +50,5 @@ group :development do
   gem "binding_of_caller"
   gem 'mysql2'
 end
+
+gem 'dotenv-rails', :groups => [:development, :test]

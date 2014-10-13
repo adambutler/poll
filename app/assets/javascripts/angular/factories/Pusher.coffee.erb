@@ -1,8 +1,9 @@
 angular
   .module("Poll")
   .factory "Pusher", ->
-    Pusher.host    = 'localhost'
-    Pusher.ws_port = 8080
-    Pusher.wss_port = 8080
-    p = new Pusher("<%= CONFIG[:pusher]["key"] %>")
 
+    Pusher.host = "<%= ENV['PUSHER_CLIENT_HOST'] %>"
+    Pusher.ws_port = <%= ENV['PUSHER_CLIENT_PORT'] %>
+    Pusher.wss_port = <%= ENV['PUSHER_CLIENT_PORT_SSL'] %>
+
+    new Pusher("<%= ENV['PUSHER_KEY'] %>")

@@ -1,7 +1,7 @@
 require 'pusher'
 
-Pusher.url = "http://#{CONFIG[:pusher]["key"]}:#{CONFIG[:pusher]["secret"]}@api.pusherapp.com/apps/91795"
+Pusher.url = "http://#{ENV['PUSHER_KEY']}:#{ENV['PUSHER_SECRET']}@#{ENV['PUSHER_API_HOST']}/apps/#{ENV['PUSHER_APP_ID']}"
 Pusher.logger = Rails.logger
 
-Pusher.host   = 'localhost'
-Pusher.port   = 4567
+Pusher.host = ENV['PUSHER_API_HOST']
+Pusher.port = Integer(ENV['PUSHER_API_PORT'])

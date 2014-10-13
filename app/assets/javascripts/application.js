@@ -18,6 +18,7 @@
 //= require tinycolor
 //= require angles
 //= require nanobar
+//= require pusher
 
 //= require_tree ./angular/modules
 //= require_tree ./angular/factories
