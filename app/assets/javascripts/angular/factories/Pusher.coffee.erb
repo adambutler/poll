@@ -2,6 +2,7 @@ angular
   .module("Poll")
   .factory "Pusher", ->
 
+
     Pusher.host = "<%= ENV['PUSHER_CLIENT_HOST'] %>"
     Pusher.ws_port = <%= ENV['PUSHER_CLIENT_PORT'] %>
     Pusher.wss_port = <%= ENV['PUSHER_CLIENT_PORT_SSL'] %>
