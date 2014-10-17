@@ -7,6 +7,7 @@ angular
       $scope.chartData = []
       $scope.chartOptions = {
         responsive: true
+        showTooltips: false
       }
 
       $scope.updateChart = ->
