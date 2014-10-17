@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="Poll">
+<html
+  ng-app="Poll"
+  data-pusher-key="<%= ENV['PUSHER_KEY'] %>"
+  data-pusher-host="<%= ENV['PUSHER_CLIENT_HOST'] %>"
+  data-pusher-port="<%= ENV['PUSHER_CLIENT_PORT'] %>"
+  data-pusher-port-ssl="<%= ENV['PUSHER_CLIENT_PORT_SSL'] %>"
+>
 <head>
   <title>Poll - Voting done simply in real-times</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
