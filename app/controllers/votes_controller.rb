@@ -17,7 +17,7 @@ class VotesController < ApplicationController
       cookies.permanent["vote_#{question.secret}"] = vote.secret
 
       respond_to do |format|
-        format.html { redirect_to "/#{question.secret}", notice: 'Vote was successfully created.' }
+        format.html { redirect_to "/#{question.secret}" }
         format.json { render json: {}, status: :created }
       end
     end

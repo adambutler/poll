@@ -13,6 +13,24 @@
       <%= text_field_tag "options[][title]", @option.title, autocomplete: "off", placeholder: "Option {{$index+1}}", ng_model: "options[$index]", ng_blur: "optionBlur($index, option)" %>
     </div>
 
+
+    <small ng-hide="optionsShown">
+      <a href="#" ng-click="optionsShown = true" >Options</a>
+      <br>
+    </small>
+
+
+    <div id="options" ng-show="optionsShown">
+      <hr>
+      <%= text_field_tag "question[secret]", "", autocomplete: "off", placeholder: "Optional custom URL", class: "input--small", maxlength: 16 %>
+    </div>
+
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <br>
+
     <div class="actions">
       <%= f.submit "Start", disabled: "disabled", ng_disabled: "formDisabled()" %>
     </div>
