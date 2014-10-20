@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_filter :set_question, only: [:show, :results]
+  before_filter :check_secret_is_unique, only: [:create]
   after_action :allow_iframe, only: [:show, :results]
 
   def new
@@ -10,7 +11,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.secret = SecureRandom.urlsafe_base64(nil, false)
+    @question.secret = SecureRandom.urlsafe_base64(nil, false) unless @question.secret?
     @question.save!
 
     params[:options].each do |option|
@@ -22,7 +23,7 @@ class QuestionsController < ApplicationController
       end
     end
 
-    redirect_to "/#{@question.secret}", notice: 'Question was successfully created.'
+    redirect_to "/#{@question.secret}"
   end
 
   def show
@@ -41,10 +42,19 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title)
+    params.require(:question).permit(:title, :secret)
   end
 
   def allow_iframe
     response.headers.except! 'X-Frame-Options'
+  end
+
+  def check_secret_is_unique
+    if defined? params[:question][:secret]
+      if  Question.where({secret: params[:question][:secret]}).exists?
+        @question = Question.new(question_params)
+        redirect_to :back, notice: 'Sorry that URL is taken'
+      end
+    end
   end
 end
