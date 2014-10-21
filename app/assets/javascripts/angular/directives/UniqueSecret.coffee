@@ -1,7 +1,6 @@
 angular
   .module("Poll")
-  .directive "uniqueSecret", [
-    "$http", ($http) ->
+  .directive "uniqueSecret", ["$http", ($http) ->
         require: "ngModel"
         link: (scope, ele, attrs, c) ->
           scope.$watch attrs.ngModel, ->
