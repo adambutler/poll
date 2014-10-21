@@ -8,6 +8,7 @@ angular
       return true if $scope.options.length == 0
       return true if $scope.options.length == 1 and $scope.options[0] == ""
       return true if $scope.options.length == 2 and $scope.options[0] == "" and $scope.options[1] == ""
+      return true if $scope.newQuestionForm.$invalid
       return true if $scope.question == ""
 
     $scope.setOption = (id) ->

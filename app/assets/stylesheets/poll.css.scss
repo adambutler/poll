@@ -239,6 +239,10 @@ input[type=text] {
     margin-right: auto;
   }
 
+  &.ng-invalid {
+    border-color: $red;
+  }
+
 }
 
 input[type=submit] {

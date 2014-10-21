@@ -2,7 +2,7 @@
 <h2 class="subtle">Voting done simply in real-time</h2>
 
 <div ng-controller="QuestionController">
-  <%= form_for(@question) do |f| %>
+  <%= form_for(@question, html: { name: "newQuestionForm" }) do |f| %>
     <div class="field">
       <%= f.text_field :title, class: "large", autocomplete: "off", placeholder: "Add your question here", ng_model: "question" %>
     </div>
@@ -22,7 +22,8 @@
 
     <div id="options" ng-show="optionsShown">
       <hr>
-      <%= text_field_tag "question[secret]", "", autocomplete: "off", placeholder: "Optional custom URL", class: "input--small", maxlength: 16 %>
+      <%= text_field_tag "question[secret]", "", autocomplete: "off", placeholder: "Optional custom URL", class: "input--small", maxlength: 16, ng_model: "secret", unique_secret: "{{ secret }}" %>
+      <p ng-show="newQuestionForm.$invalid"><small>Sorry! This URL is taken.</small></p>
     </div>
 
     <% if flash[:notice] %>
