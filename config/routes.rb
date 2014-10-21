@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   put '/votes' => 'votes#update'
   get ':secret' => 'questions#show'
   get ':secret/results' => 'questions#results'
+  get '/availability/:secret' => 'questions#check_secret_availability'
   root 'questions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

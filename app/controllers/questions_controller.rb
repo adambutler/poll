@@ -35,6 +35,10 @@ class QuestionsController < ApplicationController
     @options = @question.options
   end
 
+  def check_secret_availability
+    render json: { available: !Question.where({secret: params[:secret]}).exists? }
+  end
+
   private
 
   def set_question
@@ -51,10 +55,11 @@ class QuestionsController < ApplicationController
 
   def check_secret_is_unique
     if defined? params[:question][:secret]
-      if  Question.where({secret: params[:question][:secret]}).exists?
+      if Question.where({secret: params[:question][:secret]}).exists?
         @question = Question.new(question_params)
         redirect_to :back, notice: 'Sorry that URL is taken'
       end
     end
   end
+
 end
