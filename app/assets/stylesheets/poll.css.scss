@@ -1,3 +1,5 @@
+$footer-height: 46px;
+
 $turquoise: #1abc9c;
 $turquoise-dark: #16a085;
 
@@ -40,19 +42,24 @@ h1 {
   display: inline-block;
 }
 
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 small {
   font-weight: 100;
 }
 
 .wrapper {
   min-height: 100%;
-  margin: 0 auto -55px;
+  margin: 0 auto -($footer-height) auto;
 }
 
 .footer, .push {
   padding: 0 20px;
   margin: 0;
-  height: 50px;
+  height: $footer-height;
 }
 
 .footer {
