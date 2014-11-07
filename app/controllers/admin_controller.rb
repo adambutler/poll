@@ -9,7 +9,9 @@ class AdminController < ApplicationController
 
   def authenticate
     if Rails.env.production?
-      http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password:  ENV['ADMIN_PASSWORD']
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV['ADMIN_USERNAME'] && password == ENV['ADMIN_PASSWORD']
+      end
     end
   end
 end
