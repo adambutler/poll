@@ -1,1 +1,20 @@
 <h1>Admin</h1>
+
+<h3>Top Questions</h3>
+
+<table class="text--left text--readability">
+  <thead>
+    <th>Question</th>
+    <th>Options</th>
+    <th>Votes</th>
+  </thead>
+  <tbody>
+    <% @questions.each do | question | %>
+    <tr>
+      <td><%= link_to question.title, "/#{question.secret}/results" %></td>
+      <td><%= question.options.count %></td>
+      <td><%= question.votes.count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
