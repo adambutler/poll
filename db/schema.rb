@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141004134727) do
     t.string   "secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "scheme",     default: "web"
   end
 
   create_table "votes", force: true do |t|

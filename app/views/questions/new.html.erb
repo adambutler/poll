@@ -24,6 +24,9 @@
       <hr>
       <%= text_field_tag "question[secret]", "", autocomplete: "off", placeholder: "Optional custom URL", class: "input--small", maxlength: 16, ng_model: "secret", unique_secret: "{{ secret }}" %>
       <p ng-show="newQuestionForm.$invalid"><small>Sorry! This URL is taken.</small></p>
+      <div>
+        <input type="checkbox" name="sms_voting"> <small>SMS voting ( disables web voting )</small>
+      </div>
     </div>
 
     <% if flash[:notice] %>

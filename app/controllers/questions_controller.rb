@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.secret = SecureRandom.urlsafe_base64(nil, false) unless @question.secret?
+    @question.scheme = "sms" if params[:sms_voting] === "on"
     @question.save!
 
     params[:options].each do |option|
