@@ -21,11 +21,19 @@ angular
               else
                 $scope.chartData = $.extend true, $scope.chartData, data
 
+              total = 0
+              for datum, index in data
+                total += datum.value
+
+              console.log "Total = #{total}"
+
               if $scope.chart?
+                console.log 'a'
                 for datum, index in data
                   $scope.chart.segments[index].value = datum.value
                 $scope.chart.update()
-              else
+              else if total > 0
+                console.log 'b'
                 $scope.chart = new Chart($scope.ctx).Doughnut($scope.chartData, $scope.chartOptions)
 
 
