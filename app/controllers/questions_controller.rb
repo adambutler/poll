@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
 
   before_filter :set_question, only: [:show, :results]
   before_filter :check_secret_is_unique, only: [:create]
-  after_action :allow_iframe, only: [:show, :results]
 
   def new
     @question = Question.new
@@ -47,10 +46,6 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:title, :secret)
-  end
-
-  def allow_iframe
-    response.headers.except! 'X-Frame-Options'
   end
 
   def check_secret_is_unique
