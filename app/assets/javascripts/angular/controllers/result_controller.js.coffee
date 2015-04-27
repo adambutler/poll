@@ -8,6 +8,7 @@ angular
       $scope.chartOptions = {
         responsive: true
         showTooltips: false
+        animationSteps: 45
       }
 
       $scope.updateChart = ->
