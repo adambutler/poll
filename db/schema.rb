@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004134727) do
+ActiveRecord::Schema.define(version: 20141108125006) do
 
   create_table "options", force: true do |t|
     t.string   "title"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "secret"
   end
 
   create_table "questions", force: true do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141004134727) do
     t.string   "secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "scheme",     default: "web"
   end
 
   create_table "votes", force: true do |t|
