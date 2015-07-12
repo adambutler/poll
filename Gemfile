@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 gem "autoprefixer-rails"
 gem 'rails-assets-angular', "1.3.0.rc.4"
 gem 'pusher'
+gem 'actioncable', github: "rails/actioncable"
+gem 'puma'
 
 group :production, :staging do
   gem 'pg'
