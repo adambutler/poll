@@ -11,7 +11,8 @@ class VotesController < ApplicationController
     vote.question_id = question.id unless vote.question_id
     vote.option_id = Option.find(params[:vote][:option_id]).id
 
-    Pusher[question_id].trigger("vote", {})
+    Rails.logger.debug "question:#{question.id}:vote"
+    ActionCable.server.broadcast "question:#{question.id}:vote", {}
 
     if vote.save!
       cookies.permanent["vote_#{question.secret}"] = vote.secret
