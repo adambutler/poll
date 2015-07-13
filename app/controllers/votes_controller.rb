@@ -11,11 +11,11 @@ class VotesController < ApplicationController
     vote.question_id = question.id unless vote.question_id
     vote.option_id = Option.find(params[:vote][:option_id]).id
 
-    Rails.logger.debug "question:#{question.id}:vote"
-    ActionCable.server.broadcast "question:#{question.id}:vote", {}
-
     if vote.save!
       cookies.permanent["vote_#{question.secret}"] = vote.secret
+
+      serialized_options = question.options.map { |option| OptionSerializer.new(option).attributes }
+      ActionCable.server.broadcast "question:#{question.secret}:vote", serialized_options
 
       respond_to do |format|
         format.html { redirect_to "/#{question.secret}" }

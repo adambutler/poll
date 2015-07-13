@@ -21,9 +21,6 @@ $ rake db:migrate
 $ cp .env.example .env
 ```
 
-Modify the `.env` file to match with your [Pusher](http://pusher.com) application credentials or setup [Slanger](https://github.com/stevegraham/slanger) (perhaps with [docker-slanger](https://github.com/adambutler/docker-slanger))
-
-
 ## Contributing
 
 Contributions are welcome, please follow [GitHub Flow](https://guides.github.com/introduction/flow/index.html)

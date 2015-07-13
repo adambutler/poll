@@ -1,4 +1,4 @@
-<div ng-controller="ResultController" ng-init="setQuestion('<%= @question.secret %>')">
+<div ng-controller="ResultController" ng-init="setQuestion('<%= @question.secret %>')" data-question-secret="<%= @question.secret %>">
   <div class="row">
     <div class="col col-left">
       <div class="chart">

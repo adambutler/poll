@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html
-  ng-app="Poll"
-  data-pusher-key="<%= ENV['PUSHER_KEY'] %>"
-  data-pusher-host="<%= ENV['PUSHER_CLIENT_HOST'] %>"
-  data-pusher-port="<%= ENV['PUSHER_CLIENT_PORT'] %>"
-  data-pusher-port-ssl="<%= ENV['PUSHER_CLIENT_PORT_SSL'] %>"
->
+<html ng-app="Poll">
 <head>
   <title>Poll - Voting done simply in real-times</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -40,7 +34,7 @@
     <div class="push"></div>
   </div>
   <div class="footer">
-    <p>Poll is an <a href="https://github.com/adambutler/poll" target="_blank">open-sourced project</a> by <a href="http://github.com/adambutler" target="_blank">Adam Butler</a> - Powered by <a href="http://pusher.com" target="_blank">Pusher</a><br>
+    <p>Poll is an <a href="https://github.com/adambutler/poll" target="_blank">open-sourced project</a> by <a href="http://github.com/adambutler" target="_blank">Adam Butler</a><br>
   </div>
 
   <script>
