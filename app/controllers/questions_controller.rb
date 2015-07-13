@@ -32,6 +32,10 @@ class QuestionsController < ApplicationController
 
   def results
     @options = @question.options
+    respond_to do |format|
+      format.html
+      format.json { render json: @options }
+    end
   end
 
   def check_secret_availability

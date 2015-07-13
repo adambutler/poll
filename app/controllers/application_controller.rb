@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def allow_iframe
     response.headers.except! 'X-Frame-Options'
   end
+
+  def default_serializer_options
+    { root: false }
+  end
 end
