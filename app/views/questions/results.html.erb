@@ -4,6 +4,9 @@
       <div class="chart">
         <header class="chart__header">
           <h1><%= @question.title %></h1><br>
+          <% if params['presenter'] %>
+            <h2>Vote at <pre class="vote-url"><%= options_url(@question.secret) %></pre></h2>
+          <% end %>
           <small class="subtle">No need to refresh! Results update in real-time</small>
         </header>
         <article class="chart__main">

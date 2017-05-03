@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'pg'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,14 +44,12 @@ gem 'rails-assets-angular', "1.3.0.rc.4"
 gem 'pusher'
 
 group :production, :staging do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'mysql2'
 end
 
 gem 'dotenv-rails', :groups => [:development, :test]

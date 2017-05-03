@@ -330,3 +330,13 @@ hr {
     min-width: 0px;
   }
 }
+
+.vote-url {
+  display: inline;
+  border: 2px solid #ccc;
+  font-size: 1.4em;
+  padding: 8px 15px;
+  margin: 0 10px;
+  border-radius: 40px;
+  background: $gray-light;
+}

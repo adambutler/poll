@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :questions
   get '/admin' => 'admin#dashboard'
   put '/votes' => 'votes#update'
-  get ':secret' => 'questions#show'
+  get ':secret' => 'questions#show', as: 'options'
   get ':secret/results' => 'questions#results'
   get '/availability/:secret' => 'questions#check_secret_availability'
   root 'questions#new'
